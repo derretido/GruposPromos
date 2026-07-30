@@ -109,7 +109,6 @@ h1 {
   color: #555;
 }
 
-
 .ofertaBeleza{
   width: 56px;
   height: 56px;
@@ -120,8 +119,8 @@ h1 {
   justify-content: center;
   font-size: 26px;
   color: #fff;
+  object-fit: cover;
 }
-
 
 .ofertaTech{
   width: 56px;
@@ -132,6 +131,7 @@ h1 {
   align-items: center;
   justify-content: center;
   font-size: 26px;
+  object-fit: cover;
 }
 
 .ofertaGeral{
@@ -143,4 +143,143 @@ h1 {
   align-items: center;
   justify-content: center;
   font-size: 26px;
+  object-fit: cover;
+}
+
+/* ============================================
+   WIDGET 1: Contador "pessoas vendo agora"
+   ============================================ */
+.viewer-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #161616;
+  border: 1px solid #2e2e2e;
+  color: #d8d8d8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+
+.viewer-counter .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ecc71;
+  box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.6);
+  animation: dot-pulse 1.6s infinite;
+}
+
+@keyframes dot-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(46, 204, 113, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+/* ============================================
+   WIDGET 2: Avisos de "entrou no grupo"
+   ============================================ */
+.join-toast-container {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+  max-width: calc(100% - 32px);
+}
+
+.join-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  color: #111;
+  border-radius: 14px;
+  padding: 12px 16px;
+  min-width: 260px;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  transform: translateX(-120%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.join-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.join-toast.hide {
+  transform: translateX(-120%);
+  opacity: 0;
+}
+
+.join-toast .avatar-circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.join-toast .check-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #2ecc71;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: #fff;
+  line-height: 1;
+}
+
+.join-toast .toast-text {
+  text-align: left;
+}
+
+.join-toast .toast-text .name-line {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.join-toast .toast-text .time-line {
+  font-size: 0.78rem;
+  color: #6a6a6a;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.join-toast .toast-text .time-line .live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2ecc71;
+}
+
+@media (max-width: 400px) {
+  .join-toast {
+    min-width: 0;
+    max-width: calc(100vw - 32px);
+  }
 }

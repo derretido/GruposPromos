@@ -9,7 +9,13 @@
 <body>
   <div class="page">
 
-    <h1><Promoções class="placeholder-name">Grupos de Promoções</h1>
+    <!-- WIDGET 1: contador "pessoas vendo agora" -->
+    <div class="viewer-counter" id="viewerCounter">
+      <span class="dot"></span>
+      <span id="viewerCount">30</span> pessoas vendo agora
+    </div>
+
+    <h1 class="placeholder-name">Grupos de Promoções</h1>
 
     <p class="subtitle">
       Quem está aqui paga menos.<br>
@@ -18,26 +24,33 @@
 
     <div class="card-list">
       <a class="card" href="https://chat.whatsapp.com/JTe1IcKR3JC3chGqcdYJgB" target="_blank" rel="noopener">
-        <img src="images/PromoGeral.jpeg" class="ofertaBeleza">
+        <img src="images/Geral.png" class="ofertaBeleza" alt="">
         <div class="card-text">
           <div class="title">Entrar no WhatsApp</div>
           <div class="desc"></div>
         </div>
       </a>
       <a class="card" href="https://chat.whatsapp.com/BbmjZQ36LeMDnOn38svQRs" target="_blank" rel="noopener">
-        <img src="images/OfertasTech.jpeg" class="ofertaTech"> 
+        <img src="images/Tech.png" class="ofertaTech" alt="">
         <div class="card-text">
           <div class="title">Grupo de promoçoes - Tech</div>
           <div class="desc">Só eletrônicos no precinho</div>
         </div>
       </a>
       <a class="card" href="https://chat.whatsapp.com/JJbFHOgMdsF9J7NOMz3Dbs?s=sw&p=i&ilr=2" target="_blank" rel="noopener">
-        <img src="images/OfertasBeleza.png" class="ofertaBeleza">
+        <img src="images/OfertasBeleza.png" class="ofertaBeleza" alt="">
         <div class="card-text">
           <div class="title">Grupo de promoções - Universo feminino</div>
           <div class="desc">Beleza e Autocuidado com os melhores preços!</div>
         </div>
-      </a> 
+      </a>
+    </div>
+
   </div>
+
+  <!-- WIDGET 2: avisos de quem entrou no grupo -->
+  <div class="join-toast-container" id="joinToastContainer"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
